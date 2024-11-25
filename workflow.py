@@ -34,6 +34,14 @@ if __name__ == "__main__":
         end_date="2025-01-01",    # Usar formato string adecuado
         condition_id="condition123"
     )
+     condition__id = send_resource_to_hapi_fhir(condition_resource, 'Condition')
 
     # Imprimir el recurso creado
     print(condition_resource)
+
+    # Ver el recurso de dispositivo creado
+    if device_id:
+        get_resource_from_hapi_fhir(condition__id, 'Condition')
+
+    print("\n")
+
